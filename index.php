@@ -1,36 +1,18 @@
 <?php
 
-class Product{
-    public $name;
-    public $poster;
-    public $price;
-    public $category;
-
-    public function __construct(string $_name, string $_poster, int $_price, Category $_category)
-    {
-        $this->name = $_name;
-        $this->poster = $_poster;
-        $this->price = $_price;
-        $this->category = $_category;
-    }
-};
-
-class Category {
-    public $name;
-
-    public function __construct($_name)
-    {
-        $this->name = $_name;
-    }
-};
-
+require_once __DIR__ . "/models/Product.php";
+require_once __DIR__ . "/models/Category.php";
+require_once __DIR__ . "/models/Food.php";
 $category_1 = new Category("Cane");
-$category_2 = new Category("Gatto");
+// $category_2 = new Category("Gatto");
 
-$product_1 = new Product("Croccantini", "linkfoto", 32, $category_1);
+// $product_1 = new Product("Croccantini", "linkfoto", 32, $category_1);
 
-var_dump($product_1);
+// var_dump($product_1);
 
+$food_1 = new Food("Royal Canin", "linkfoto", 32, $category_1, "Croccantini");
+
+var_dump($food_1);
 ?>
 
 <!DOCTYPE html>
