@@ -1,7 +1,16 @@
 <?php
 
-class Prodotto{
+class Product{
+    public $name;
+    public $poster;
+    public $price;
 
+    public function __construct($_name, $_poster, $_price)
+    {
+        $this->name = $_name;
+        $this->poster = $_poster;
+        $this->price = $_price;
+    }
 }
 
 ?>
