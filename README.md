@@ -4,6 +4,15 @@
 
 ![Screenshot](./Screenshot_1.png)
 
+## TECNOLOGIE e LIBRERIE
+
+- Html
+- Css
+- Bootstrap
+- Php
+
+## SVOLGIMENTO
+
 Crezione di uno shop online con le seguenti caratteristiche:
 
 - L'e-commerce vende **prodotti** per animali.
