@@ -9,7 +9,7 @@
                 <?= $game_product->price  ?> €
             </h6>
             <h6 class="card-text">
-                <?= $game_product->category->name ?>
+                <?= $game_product->category->icon ?>
             </h6>
             <h6 class="card-text">
                 <?= $game_product->type ?>

@@ -9,7 +9,7 @@
                 <?= $bed_product->price  ?> €
             </h6>
             <h6 class="card-text">
-                <?= $bed_product->category->name ?>
+                <?= $bed_product->category->icon ?>
             </h6>
             <h6 class="card-text">
                 <?= $bed_product->type ?>

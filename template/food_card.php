@@ -9,7 +9,7 @@
                 <?= $food_product->price  ?> €
             </h6>
             <h6 class="card-text">
-                <?= $food_product->category->name ?>
+                <?= $food_product->category->icon ?>
             </h6>
             <h6 class="card-text">
                 <?= $food_product->type ?>

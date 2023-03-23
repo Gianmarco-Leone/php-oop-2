@@ -6,8 +6,8 @@ require_once __DIR__ . "/../models/Food.php";
 require_once __DIR__ . "/../models/Game.php";
 require_once __DIR__ . "/../models/Bed.php";
 
-$category_1 = new Category("Cane");
-$category_2 = new Category("Gatto");
+$category_1 = new Category("Cane", "<i class='fa-solid fa-dog'></i>");
+$category_2 = new Category("Gatto", "<i class='fa-solid fa-cat'></i>");
 
 
 $food_products = [
