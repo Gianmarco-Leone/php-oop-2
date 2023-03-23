@@ -5,8 +5,8 @@
             <h5 class="card-title">
                 <?= $game_product->title ?>
             </h5>
-            <h6 class="card-text">
-                <?= $game_product->price  ?> €
+            <h6 class="card-text text-danger">
+                <?= $game_product->getPrice()  ?> €
             </h6>
             <h6 class="card-text">
                 <?= $game_product->category->icon ?>

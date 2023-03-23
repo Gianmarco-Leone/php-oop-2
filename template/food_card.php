@@ -5,8 +5,8 @@
             <h5 class="card-title">
                 <?= $food_product->title ?>
             </h5>
-            <h6 class="card-text">
-                <?= $food_product->price  ?> €
+            <h6 class="card-text text-danger">
+                <?= $food_product->getPrice()  ?> €
             </h6>
             <h6 class="card-text">
                 <?= $food_product->category->icon ?>

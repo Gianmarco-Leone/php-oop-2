@@ -5,8 +5,8 @@
             <h5 class="card-title">
                 <?= $bed_product->title ?>
             </h5>
-            <h6 class="card-text">
-                <?= $bed_product->price  ?> €
+            <h6 class="card-text text-danger">
+                <?= $bed_product->getPrice()  ?> €
             </h6>
             <h6 class="card-text">
                 <?= $bed_product->category->icon ?>
