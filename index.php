@@ -9,29 +9,77 @@ require_once __DIR__ . "/models/Bed.php";
 $category_1 = new Category("Cane");
 $category_2 = new Category("Gatto");
 
-$food_1 = new Food(
-    "Royal Canin",
-    "https://www.magazzinitotopiccinni.it/media/catalog/product/cache/1/thumbnail/600x/17f82f742ffe127f42dca9de82fb58b1/r/o/royal-canin-15kg-cani.jpg",
-    32, 
-    $category_1,
-    "Croccantini"
-);
+$food_products = [
+    new Food(
+        "Royal Canin",
+        "https://www.magazzinitotopiccinni.it/media/catalog/product/cache/1/thumbnail/600x/17f82f742ffe127f42dca9de82fb58b1/r/o/royal-canin-15kg-cani.jpg",
+        60, 
+        $category_1,
+        "Croccantini"
+    ),
+    new Food(
+        "Eukanuba",
+        "https://shop-cdn-m.mediazs.com/bilder/eukanuba/adult/large/breed/pollo/5/800/162907_pla_tetragmbhiams_eukanuba_adult_largebreed_huhn_dog_d15kg_hs_01_5.jpg",
+        48, 
+        $category_1,
+        "Croccantini"
+    ),
+    new Food(
+        "Cosma Nature",
+        "https://shop-cdn-m.mediazs.com/bilder/cosma/nature/in/busta/x/g/2/400/99515_pla_cosma_nature_chickentuna_50g_2.jpg",
+        11, 
+        $category_2,
+        "Umido"
+    )
+];
 
-$game_1 =  new Game(
-    "Hagen Catit Design",
-    "https://shop-cdn-m.mediazs.com/bilder/gioco/per/gatti/hagen/catit/design/senses/track/1/400/giococatit_1.jpg",
-    8, 
-    $category_2,
-    "Gioco d'intelligenza"
-);
+$game_products = [
+    new Game(
+        "Hagen Catit Design",
+        "https://shop-cdn-m.mediazs.com/bilder/gioco/per/gatti/hagen/catit/design/senses/track/1/400/giococatit_1.jpg",
+        16, 
+        $category_2,
+        "Gioco d'intelligenza"
+    ),
+    new Game(
+        "Wild Mouse",
+        "https://shop-cdn-m.mediazs.com/bilder/gioco/per/gatti/topolino/sonoro/wild/mouse/con/led/7/400/67334_katzenspielzeug_wild_mouse_mit_sound_und_led_fg_2717_7.jpg",
+        3, 
+        $category_2,
+        "Gioco stimolante"
+    ),
+    new Game(
+        "Kong",
+        "https://www.thekill.it/206-large_default/gioco-gomma-naturale-kong-classic.jpg",
+        8, 
+        $category_1,
+        "Gioco d'intelligenza"
+    )
+];
 
-$bed_1 = new AnimalBed(
-    "Spike Comfort",
-    "https://croci.net/wp-content/uploads/2020/09/Cuccia_per_cani_Chalet.jpg",
-    80, 
-    $category_1,
-    "Esterno"
-);
+$bed_products = [
+    new AnimalBed(
+        "Spike Comfort",
+        "https://croci.net/wp-content/uploads/2020/09/Cuccia_per_cani_Chalet.jpg",
+        80, 
+        $category_1,
+        "Esterno"
+    ),
+    new AnimalBed(
+        "Tiragraffi Living Havana",
+        "https://shop-cdn-m.mediazs.com/bilder/tiragraffi/modern/living/havana/6/400/115902_pla_modern_living_kb_havana_fg_4375_6.jpg",
+        124, 
+        $category_2,
+        "Interno"
+    ),
+    new AnimalBed(
+        "Charles 50 Ferplast",
+        "https://www.gardenbedettishop.com/16599-large_default/cuccia-per-cani-charles-50-ferplast.jpg",
+        67, 
+        $category_1,
+        "Interno"
+    )
+];
 
 ?>
 
@@ -43,85 +91,42 @@ $bed_1 = new AnimalBed(
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP OOP Extends</title>
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
 </head>
 
 <body>
-    <style>
-    ul {
-        list-style: none;
-    }
+    <div class="container">
+        <h1>Pet Shop</h1>
 
-    div {
-        width: 300px;
-        border: 1px solid black;
-        display: inline-block;
-    }
+        <h2 class="my-5">Food</h2>
 
-    div img {
-        max-width: 100%;
-        object-fit: cover;
-    }
-    </style>
-    <h1>Pet Shop</h1>
+        <div class="row row-cols-3">
+            <?php foreach($food_products as $food_product) { ?>
+            <?php include __DIR__ . "/template/food_card.php" ?>
+            <?php } ?>
+        </div>
 
-    <ul>
-        <li>
-            <div>
-                <img src="<?= $food_1->poster ?>" alt="<?= $food_1->title ?>">
-                <h4>
-                    <?= $food_1->title ?>
-                </h4>
-                <h6>
-                    <?= $food_1->price  ?> €
-                </h6>
-                <h6>
-                    <?= $category_1->name ?>
-                </h6>
-                <h6>
-                    <?= $food_1->type ?>
-                </h6>
-                <h6>
+        <h2 class="my-5">Games</h2>
 
-                </h6>
-            </div>
-            <div>
-                <img src="<?= $game_1->poster ?>" alt="<?= $game_1->title ?>">
-                <h4>
-                    <?= $game_1->title ?>
-                </h4>
-                <h6>
-                    <?= $game_1->price  ?> €
-                </h6>
-                <h6>
-                    <?= $category_2->name ?>
-                </h6>
-                <h6>
-                    <?= $game_1->game_mode ?>
-                </h6>
-                <h6>
+        <div class="row row-cols-3">
+            <?php foreach($game_products as $game_product) { ?>
+            <?php include __DIR__ . "/template/game_card.php" ?>
+            <?php } ?>
+        </div>
 
-                </h6>
-            </div>
-            <div>
-                <img src="<?= $bed_1->poster ?>" alt="<?= $bed_1->title ?>">
-                <h4>
-                    <?= $bed_1->title ?>
-                </h4>
-                <h6>
-                    <?= $bed_1->price  ?> €
-                </h6>
-                <h6>
-                    <?= $category_1->name ?>
-                </h6>
-                <h6>
-                    <?= $bed_1->place ?>
-                </h6>
-                <h6>
+        <h2 class="my-5">Beds</h2>
 
-                </h6>
-            </div>
-        </li>
-    </ul>
+        <div class="row row-cols-3">
+            <?php foreach($bed_products as $bed_product) { ?>
+            <?php include __DIR__ . "/template/bed_card.php" ?>
+            <?php } ?>
+        </div>
+
+    </div>
 </body>
 
 </html>

@@ -1,5 +1,9 @@
 # PHP OOP Extends
 
+> Esercizio con ereditarietà classi
+
+![Screenshot](./Screenshot_1.png)
+
 Crezione di uno shop online con le seguenti caratteristiche:
 
 - L'e-commerce vende **prodotti** per animali.
