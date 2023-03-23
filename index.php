@@ -4,6 +4,7 @@ require_once __DIR__ . "/models/Product.php";
 require_once __DIR__ . "/models/Category.php";
 require_once __DIR__ . "/models/Food.php";
 require_once __DIR__ . "/models/Game.php";
+require_once __DIR__ . "/models/Bed.php";
 
 $category_1 = new Category("Cane");
 $category_2 = new Category("Gatto");
@@ -23,6 +24,15 @@ $game_1 =  new Game(
     $category_2,
     "Gioco d'intelligenza"
 );
+
+$bed_1 = new AnimalBed(
+    "Spike Comfort",
+    "https://croci.net/wp-content/uploads/2020/09/Cuccia_per_cani_Chalet.jpg",
+    80, 
+    $category_1,
+    "Esterno"
+);
+
 ?>
 
 <!DOCTYPE html>
@@ -87,6 +97,24 @@ $game_1 =  new Game(
                 </h6>
                 <h6>
                     <?= $game_1->game_mode ?>
+                </h6>
+                <h6>
+
+                </h6>
+            </div>
+            <div>
+                <img src="<?= $bed_1->poster ?>" alt="<?= $bed_1->title ?>">
+                <h4>
+                    <?= $bed_1->title ?>
+                </h4>
+                <h6>
+                    <?= $bed_1->price  ?> €
+                </h6>
+                <h6>
+                    <?= $category_1->name ?>
+                </h6>
+                <h6>
+                    <?= $bed_1->place ?>
                 </h6>
                 <h6>
 
